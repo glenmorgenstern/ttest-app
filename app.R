@@ -9,6 +9,7 @@ ui <- pageWithSidebar(
   
   # Sidebar ----
   sidebarPanel(
+    helpText("Select the characteristics of each population. What happens to their shape, the shape of the differences, and the accuracy of the resulting confidence intervals?"),
     # Population 1 input
     h1("Population 1 (Red)"),
     
