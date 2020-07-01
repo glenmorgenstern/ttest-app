@@ -1,6 +1,7 @@
 library(shiny)
 library(tidyverse)
 library(gridExtra)
+library(ggthemes)
 ui <- pageWithSidebar(
   
   # Title ----
@@ -238,7 +239,7 @@ server <- function(input, output, session) {
         scale_y_continuous(limits = c(0,2), breaks = NULL) +
         theme(plot.title = element_text(hjust = 0.5),
               panel.grid.major = element_blank(),
-              panel.grid.minor = element_blank())
+              panel.grid.minor = element_blank()) + theme_economist()
     }
     
     grid.arrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], plots[[5]],
@@ -271,7 +272,7 @@ server <- function(input, output, session) {
         theme_light(base_size = 10) + # better than doing title sizes inside theme().
         theme(plot.title = element_text(hjust = 0.5),
               panel.grid.major = element_blank(),
-              panel.grid.minor = element_blank())
+              panel.grid.minor = element_blank()) + theme_economist()
     
   })
   
@@ -290,7 +291,7 @@ server <- function(input, output, session) {
       geom_point(size = 1, aes(color=included)) +
       geom_errorbar(aes(ymax = V1, ymin = V2,color=included))+
       labs(x="")+
-      scale_colour_manual(values = c("red","black"))
+      scale_colour_manual(values = c("red","black")) + theme_economist()
     
   })
   output$descr = renderText({
