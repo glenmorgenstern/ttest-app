@@ -19,6 +19,7 @@ ui <- pageWithSidebar(
                    "Left skewed" = "rbeta"),
                  selected = "rnorm"),
     
+   
     uiOutput("skew1"),
     
     br(),
@@ -30,6 +31,7 @@ ui <- pageWithSidebar(
                  list("Normal" = "rnorm",
                       "Right skewed" = "rexp",
                       "Left skewed" = "rbeta")),
+   
     uiOutput("sd2"),
     uiOutput("skew2"),
     
